@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobileApp.MainPage"
+             Title="Staff Directory">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="220"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Image Source="btx.png"
+               Aspect="AspectFill"
+               Grid.Row="0"/>
+
+        <VerticalStackLayout
+            Spacing="20"
+            Padding="10"
+            Grid.Row="0">
+            <Image Source="logo.png"
+                   WidthRequest="400"
+                   HeightRequest="120"
+                   />
+
+            <SearchBar
+                Placeholder="Search"
+                PlaceholderColor="Gray"
+                BackgroundColor="White"
+                HeightRequest="40"
+                WidthRequest="400"
+                IsSpellCheckEnabled="False"
+                IsTextPredictionEnabled="False"
+                />
+        </VerticalStackLayout>
+
+        <ListView
+            x:Name="EmployeeView"
+            ItemsSource="{Binding Path=(MobileApp:MainPage.Employees)}"
+            Grid.Row="1"
+            ItemTapped="OnEmployeeSelected">
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <HorizontalStackLayout
+                            Spacing="60"
+                            HorizontalOptions="Start"
+                            Padding="100,0">
+                            <Image Source="{Binding ProfilePic}"
+                                   WidthRequest="100"
+                                   HeightRequest="100"
+                                   VerticalOptions="Center"/>
+                            <VerticalStackLayout
+                                VerticalOptions="Center">
+                                <HorizontalStackLayout
+                                    Spacing="7">
+                                    <Label Text="{Binding FirstName}"
+                                           FontSize="Subtitle"/>
+
+                                    <Label Text="{Binding LastName}"
+                                           FontSize="Subtitle"/>
+                                </HorizontalStackLayout>
+                                <Label Text="{Binding Department}"
+                                       FontSize="Subtitle"
+                                       TextColor="Gray"/>
+                            </VerticalStackLayout>
+
+                        </HorizontalStackLayout>
+                    </ViewCell>
+                </DataTemplate>
+
+            </ListView.ItemTemplate>
+
+        </ListView>
+
+    </Grid>
+</ContentPage>

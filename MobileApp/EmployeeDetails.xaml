@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobileApp.EmployeeDetails"
+             Title="Employee details">
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="220"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Image Source="btx.png"
+               Aspect="AspectFill"
+               Grid.Row="0"/>
+
+        <Grid
+            Grid.Row="0"
+            RowSpacing="5"
+            Padding="25"
+            >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <Image
+                x:Name="EmployeePhoto"
+                Grid.Row="0"
+                />
+
+            <HorizontalStackLayout
+                Grid.Row="1"
+                HorizontalOptions="Center"
+                Spacing="10">
+                <Label
+                    x:Name="EmployeeFirstName"
+                    TextColor="White"
+                    FontSize="Title"
+                    />
+
+                <Label
+                    x:Name="EmployeeLastName"
+                    TextColor="White"
+                    FontSize="Title"
+                    />
+            </HorizontalStackLayout>
+
+            <Label
+                x:Name="EmployeeDepartment"
+                TextColor="White"
+                FontSize="Subtitle"
+                HorizontalOptions="Center"
+                Grid.Row="2"
+                />
+
+        </Grid>
+
+        <VerticalStackLayout
+            Grid.Row="1"
+            Padding="30"
+            Spacing="30">
+            <Border
+                Padding="30"
+                StrokeThickness="2">
+                <HorizontalStackLayout
+                    Spacing="30">
+                    <Image Source="phone.png"
+                            WidthRequest="70"
+                            HeightRequest="70"
+                            />
+
+                    <Label
+                        x:Name="EmployeeNumber"
+                        FontSize="Subtitle"
+                        VerticalOptions="Center"
+                        />
+                </HorizontalStackLayout>
+            </Border>
+
+            <Border
+                Padding="30"
+                StrokeThickness="2">
+                <HorizontalStackLayout
+                    Spacing="30">
+                    <Image Source="mail.png"
+                            WidthRequest="70"
+                            HeightRequest="70"
+                            />
+
+                    <Label
+                        x:Name="EmployeeEmail"
+                        FontSize="Subtitle"
+                        VerticalOptions="Center"
+                        />
+                </HorizontalStackLayout>
+            </Border>
+
+            <Border
+                Padding="30"
+                StrokeThickness="2">
+                <HorizontalStackLayout
+                    Spacing="30">
+                    <Image Source="address.png"
+                            WidthRequest="70"
+                            HeightRequest="70"
+                            />
+
+                    <VerticalStackLayout
+                        VerticalOptions="Center">
+                        <Label
+                            x:Name="EmployeeAddress1"
+                            FontSize="Subtitle"
+                            />
+
+                        <Label
+                            x:Name="EmployeeAddress2"
+                            FontSize="Subtitle"
+                            />
+                    </VerticalStackLayout>
+                </HorizontalStackLayout>
+            </Border>
+
+            <HorizontalStackLayout
+                HorizontalOptions="Center"
+                Spacing="70"
+                Padding="30"
+                Grid.Row="2">
+                <VerticalStackLayout
+                    Spacing="10">
+                    <ImageButton
+                        Source="edit.png"
+                        WidthRequest="70"
+                        HeightRequest="70"
+                        Clicked="OnUpdateButtonClicked"
+                        />
+
+                    <Label
+                        Text="Update"
+                        FontSize="Header"
+                        HorizontalOptions="Center"
+                        />
+                </VerticalStackLayout>
+
+                <VerticalStackLayout
+                    Spacing="10">
+                    <ImageButton
+                        Source="delete.png"
+                        WidthRequest="70"
+                        HeightRequest="70"
+                        Clicked="OnDeleteButtonClicked"
+                        />
+
+                    <Label
+                        Text="Delete"
+                        FontSize="Header"
+                        HorizontalOptions="Center"
+                        />
+                </VerticalStackLayout>
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>

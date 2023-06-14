@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobileApp.UpdateDetails"
+             Title="Update details">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="200"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Image Source="btx.png"
+               Aspect="AspectFill"
+               Grid.Row="0"/>
+
+        <Image
+            x:Name="PictureUpdate"
+            WidthRequest="120"
+            Grid.Row="0"
+            />
+
+        <ScrollView
+            Grid.Row="1">
+            <VerticalStackLayout
+                Grid.Row="1"
+                Padding="30"
+                Spacing="20">
+
+                <VerticalStackLayout
+                    Spacing="5">
+                    <Label
+                        Text="First name"
+                        FontSize="Header"
+                        HorizontalOptions="Center"
+                        TextColor="Gray"/>
+
+                    <Entry
+                        x:Name="FirstNameUpdate"
+                        HorizontalTextAlignment="Center"
+                        FontSize="Subtitle"
+                        />
+                </VerticalStackLayout>
+
+                <VerticalStackLayout
+                    Spacing="5">
+                    <Label
+                        Text="Last name"
+                        FontSize="Header"
+                        HorizontalOptions="Center"
+                        TextColor="Gray"/>
+
+                    <Entry
+                        x:Name="LastNameUpdate"
+                        HorizontalTextAlignment="Center"
+                        FontSize="Subtitle"
+                        />
+                </VerticalStackLayout>
+
+                <VerticalStackLayout
+                    Spacing="5">
+                    <Label
+                        Text="Department"
+                        FontSize="Header"
+                        HorizontalOptions="Center"
+                        TextColor="Gray"/>
+
+                    <Entry
+                        x:Name="DepartmentUpdate"
+                        HorizontalTextAlignment="Center"
+                        FontSize="Subtitle"
+                        />
+                </VerticalStackLayout>
+
+                <VerticalStackLayout
+                    Spacing="5">
+                    <Label
+                        Text="Phone number"
+                        FontSize="Header"
+                        HorizontalOptions="Center"
+                        TextColor="Gray"
+                        />
+
+                    <Entry
+                        x:Name="PhoneUpdate"
+                        HorizontalTextAlignment="Center"
+                        FontSize="Subtitle"
+                        />
+                </VerticalStackLayout>
+
+                <VerticalStackLayout
+                    Spacing="5">
+                    <Label
+                        Text="Address line 1"
+                        FontSize="Header"
+                        HorizontalOptions="Center"
+                        TextColor="Gray"/>
+
+                    <Entry
+                        x:Name="AddressUpdateLine1"
+                        HorizontalTextAlignment="Center"
+                        FontSize="Subtitle"
+                        />
+
+                </VerticalStackLayout>
+
+                <VerticalStackLayout
+                    Spacing="5">
+                    <Label
+                        Text="Address Line 2"
+                        FontSize="Header"
+                        HorizontalOptions="Center"
+                        TextColor="Gray"/>
+
+                    <Entry
+                        x:Name="AddressUpdateLine2"
+                        HorizontalTextAlignment="Center"
+                        FontSize="Subtitle"
+                        />
+
+                </VerticalStackLayout>
+
+                <HorizontalStackLayout
+                    HorizontalOptions="Center"
+                    Spacing="70"
+                    Padding="30">
+
+                    <VerticalStackLayout
+                        Spacing="10">
+
+                        <ImageButton
+                            x:Name="SaveButton"
+                            Source="save.png"
+                            WidthRequest="70"
+                            HeightRequest="70"
+                            Clicked="OnSaveButtonClicked"
+                            />
+
+                        <Label
+                            Text="Save"
+                            FontSize="Header"
+                            HorizontalOptions="Center"
+                            />
+
+                    </VerticalStackLayout>
+
+                </HorizontalStackLayout>
+
+            </VerticalStackLayout>
+
+        </ScrollView>
+
+        
+
+    </Grid>
+</ContentPage>

@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobileApp.SettingsPage"
+             Title="Settings">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Image Source="btx.png"
+               Aspect="AspectFill"
+               Grid.Row="0"/>
+
+        <Label
+            x:Name="HeaderText"
+            Text="Adjust user settings"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            FontSize="Title"
+            TextColor="White"
+            />
+
+        <VerticalStackLayout
+            Grid.Row="1"
+            HorizontalOptions="Center"
+            Padding="20"
+            Spacing="30">
+
+            <Border
+                Padding="30,20"
+                StrokeThickness="2">
+                <HorizontalStackLayout
+                    Spacing="150">
+
+                    <Label
+                        x:Name="ModeTitle"
+                        Text="Light/Dark mode"
+                        FontSize="Subtitle"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        />
+
+                    <Switch x:Name="ThemeSwitch"
+                            Toggled="OnThemeToggled"
+                            IsToggled="False"/>
+                </HorizontalStackLayout>
+            </Border>
+
+            <Border
+                Padding="10,20"
+                StrokeThickness="2">
+                <HorizontalStackLayout
+                    HorizontalOptions="Center">
+
+                    <VerticalStackLayout
+                        Spacing="20">
+                        <Label
+                            x:Name="SizeTitle"
+                            Text="Font size"
+                            FontSize="Subtitle"
+                            HorizontalOptions="Center"
+                            />
+
+                        <HorizontalStackLayout
+                            Spacing="50">
+                            <Button
+                                x:Name="SmallTextButton"
+                                Text="Small text"
+                                FontSize="Small"
+                                Clicked="OnSmallTextSelected"
+                                />
+
+                            <Button
+                                x:Name="LargeTextButton"
+                                Text="Large text"
+                                FontSize="Subtitle"
+                                Clicked="OnLargeTextSelected"
+                                IsEnabled="False"
+                                />
+
+                        </HorizontalStackLayout>
+                    </VerticalStackLayout>
+                </HorizontalStackLayout>
+            </Border>
+
+            <Border
+                Padding="20"
+                StrokeThickness="2">
+                <HorizontalStackLayout
+                    HorizontalOptions="Center">
+                    <VerticalStackLayout
+                        Spacing="20"
+                        Padding="5">
+                        <Label
+                            x:Name="UsernameTitle"
+                            Text="Change admin login username"
+                            FontSize="Subtitle"
+                            />
+
+                        <Entry
+                            x:Name="TextInput"
+                            FontSize="Medium"
+                            HorizontalTextAlignment="Center"
+                            TextColor="Gray"
+                            IsSpellCheckEnabled="False"
+                            IsTextPredictionEnabled="False"
+                            />
+
+                    </VerticalStackLayout>
+                </HorizontalStackLayout>
+            </Border>
+
+            <VerticalStackLayout
+                Padding="20">
+                <ImageButton
+                    Source="save.png"
+                    WidthRequest="70"
+                    HeightRequest="70"
+                    Clicked="OnSaveButtonClicked"
+                    />
+
+                <Label
+                    x:Name="ButtonLabel"
+                    Text="Save"
+                    FontSize="Subtitle"
+                    HorizontalOptions="Center"
+                    Padding="10"
+                    />
+
+            </VerticalStackLayout>
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>
