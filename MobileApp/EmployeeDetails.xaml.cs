@@ -12,6 +12,7 @@ public partial class EmployeeDetails : ContentPage
 
     public string employeeID;
 
+    // Get params passed from main page, set employee details view as params
     public EmployeeDetails(params string[] data)
     {
         InitializeComponent();
@@ -28,6 +29,7 @@ public partial class EmployeeDetails : ContentPage
         EmployeePhoto.Source = data[8];
     }
 
+    // Send employee details to UpdateDetails page
     private async void OnUpdateButtonClicked(object sender, EventArgs e)
 	{
         FileImageSource getCurrentImage = (FileImageSource)EmployeePhoto.Source;
@@ -45,6 +47,7 @@ public partial class EmployeeDetails : ContentPage
             ));
     }
 
+    // Show warning, if proceeding then find employee in employee.csv and remove line from the file, rewrite file
     private async void OnDeleteButtonClicked(object sender, EventArgs e)
     {
         var userChoice = await DisplayActionSheet("⚠️ Alert\n\nAre you sure you want to delete this employee record?", "Cancel", "Yes, delete");
@@ -57,8 +60,8 @@ public partial class EmployeeDetails : ContentPage
                 HasHeaderRecord = false
             };
 
-            var localFile = "/INSERT/FILE/PATH/HERE";
-            var tempFile = "/INSERT/FILE/PATH/HERE";
+            var localFile = "/FILE/PATH/HERE/employee_local.csv";
+            var tempFile = "/FILE/PATH/HERE/employee_temp.csv";
 
             using (Stream streamFile = await FileSystem.Current.OpenAppPackageFileAsync(localFile))
             using (var reader = new StreamReader(streamFile))

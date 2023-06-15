@@ -58,9 +58,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <None Remove="Resources\Fonts\Trebuchet-MS-Bold.ttf" />
-	  <None Remove="Resources\Fonts\Trebuchet-MS-Italic.ttf" />
-	  <None Remove="Resources\Fonts\Trebuchet-MS.ttf" />
+	  <None Remove="Resources\Raw\employee_local %28copy%29.csv" />
+	  <None Remove="Resources\Raw\settings.csv" />
 	  <None Remove="Resources\Images\address.png" />
 	  <None Remove="Resources\Images\btx.png" />
 	  <None Remove="Resources\Images\cancel.png" />
@@ -75,13 +74,12 @@
 	  <None Remove="Resources\Images\pfpm2.png" />
 	  <None Remove="Resources\Images\phone.png" />
 	  <None Remove="Resources\Images\save.png" />
-	  <None Remove="Resources\Raw\employee_local %28copy%29.csv" />
-	  <None Remove="Resources\Raw\settings.csv" />
+	  <None Remove="Resources\Fonts\Trebuchet-MS-Bold.ttf" />
+	  <None Remove="Resources\Fonts\Trebuchet-MS-Italic.ttf" />
+	  <None Remove="Resources\Fonts\Trebuchet-MS.ttf" />
 	</ItemGroup>
 	<ItemGroup>
-	  <BundleResource Include="Resources\Fonts\Trebuchet-MS-Bold.ttf" />
-	  <BundleResource Include="Resources\Fonts\Trebuchet-MS-Italic.ttf" />
-	  <BundleResource Include="Resources\Fonts\Trebuchet-MS.ttf" />
+	  <BundleResource Include="Resources\Raw\settings.csv" />
 	  <BundleResource Include="Resources\Images\address.png" />
 	  <BundleResource Include="Resources\Images\btx.png" />
 	  <BundleResource Include="Resources\Images\cancel.png" />
@@ -96,6 +94,8 @@
 	  <BundleResource Include="Resources\Images\pfpm2.png" />
 	  <BundleResource Include="Resources\Images\phone.png" />
 	  <BundleResource Include="Resources\Images\save.png" />
-	  <BundleResource Include="Resources\Raw\settings.csv" />
+	  <BundleResource Include="Resources\Fonts\Trebuchet-MS-Bold.ttf" />
+	  <BundleResource Include="Resources\Fonts\Trebuchet-MS-Italic.ttf" />
+	  <BundleResource Include="Resources\Fonts\Trebuchet-MS.ttf" />
 	</ItemGroup>
 </Project>

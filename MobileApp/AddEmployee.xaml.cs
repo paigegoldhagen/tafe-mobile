@@ -14,6 +14,7 @@ public partial class AddEmployee : ContentPage
 		InitializeComponent();
 	}
 
+    // Get user inputs and add to local employees.csv
     private async void OnSaveButtonClicked(object sender, EventArgs e)
     {
         FileImageSource getNewImage = (FileImageSource)AddProfilePic.Source;
@@ -37,8 +38,8 @@ public partial class AddEmployee : ContentPage
             HasHeaderRecord = false
         };
 
-        var localFile = "/INSERT/FILE/PATH/HERE";
-        var tempFile = "/INSERT/FILE/PATH/HERE";
+        var localFile = "/FILE/PATH/HERE/employee_local.csv";
+        var tempFile = "/FILE/PATH/HERE/employee_temp.csv";
 
         using (Stream streamFile = await FileSystem.Current.OpenAppPackageFileAsync(localFile))
         using (var reader = new StreamReader(streamFile))
@@ -66,6 +67,7 @@ public partial class AddEmployee : ContentPage
             csvWrite.WriteRecords(newEmployee);
         }
 
+        // Delete existing copy, replace with temp copy (renamed as existing copy)
         File.Delete(localFile);
         File.Move(tempFile, localFile);
 
@@ -74,6 +76,7 @@ public partial class AddEmployee : ContentPage
         await Navigation.PushAsync(new MainPage());
     }
 
+    // Go back to staff directory
     private async void OnCancelButtonClicked(object sender, EventArgs e)
     {
         await Shell.Current.GoToAsync("//MainPage");

@@ -14,7 +14,8 @@ public partial class UpdateDetails : ContentPage
     public string employeeID;
     public string currentPicture;
 
-	public UpdateDetails(params string[] data)
+    // Get params passed from EmployeeDetails page, set employee details view as params
+    public UpdateDetails(params string[] data)
 	{
 		InitializeComponent();
 
@@ -31,6 +32,7 @@ public partial class UpdateDetails : ContentPage
         currentPicture = data[7];
     }
 
+    // Find employee in employee.csv, remove from list, add updated employee, rewrite file
     private async void OnSaveButtonClicked(object sender, EventArgs e)
 	{
         currentEmployee.Add(new EmployeeInfo
@@ -51,8 +53,8 @@ public partial class UpdateDetails : ContentPage
             HasHeaderRecord = false
         };
 
-        var localFile = "/INSERT/FILE/PATH/HERE";
-        var tempFile = "/INSERT/FILE/PATH/HERE";
+        var localFile = "/FILE/PATH/HERE/employee_local.csv";
+        var tempFile = "/FILE/PATH/HERE/employee_temp.csv";
 
         using (Stream streamFile = await FileSystem.Current.OpenAppPackageFileAsync(localFile))
         using (var reader = new StreamReader(streamFile))

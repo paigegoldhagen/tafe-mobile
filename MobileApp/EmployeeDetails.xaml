@@ -14,10 +14,12 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
+        <!--Header background-->
         <Image Source="btx.png"
                Aspect="AspectFill"
                Grid.Row="0"/>
 
+        <!--Header photo, name and department-->
         <Grid
             Grid.Row="0"
             RowSpacing="5"
@@ -61,6 +63,7 @@
 
         </Grid>
 
+        <!--Stack view of employee details (phone, email, address)-->
         <VerticalStackLayout
             Grid.Row="1"
             Padding="30"
@@ -133,6 +136,7 @@
                 Grid.Row="2">
                 <VerticalStackLayout
                     Spacing="10">
+                    <!--Update button-->
                     <ImageButton
                         Source="edit.png"
                         WidthRequest="70"
@@ -149,6 +153,7 @@
 
                 <VerticalStackLayout
                     Spacing="10">
+                    <!--Delete button-->
                     <ImageButton
                         Source="delete.png"
                         WidthRequest="70"

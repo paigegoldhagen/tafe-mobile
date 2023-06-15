@@ -13,15 +13,18 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
+        <!--Header background-->
         <Image Source="btx.png"
                Aspect="AspectFill"
                Grid.Row="0"/>
 
+        <!--Default profile picture-->
         <ImageButton x:Name="AddProfilePic"
                      Source="pfp0.png"
                      WidthRequest="120"
                      Grid.Row="0"/>
 
+        <!--Scrolling list for user inputs (first/last name, department, phone, address-->
         <ScrollView
             Grid.Row="1">
             <VerticalStackLayout
@@ -95,6 +98,7 @@
                     <VerticalStackLayout
                         Spacing="10">
 
+                        <!--Save button-->
                         <ImageButton
                             Source="save.png"
                             WidthRequest="70"
@@ -113,6 +117,7 @@
                     <VerticalStackLayout
                         Spacing="10">
 
+                        <!--Cancel button-->
                         <ImageButton
                             Source="cancel.png"
                             WidthRequest="70"

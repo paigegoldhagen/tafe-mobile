@@ -30,6 +30,7 @@ public partial class SettingsPage : ContentPage
         LoadSettings();
     }
 
+    // Get settings from file, change appearance based on variables
     public async void LoadSettings()
     {
         using (Stream stream = await FileSystem.Current.OpenAppPackageFileAsync(filePath))
@@ -98,6 +99,7 @@ public partial class SettingsPage : ContentPage
         }
     }
 
+    // Get current settings from toggle, buttons, user input and save to file
     public async void OnSaveButtonClicked(object sender, EventArgs e)
     {
         currentSettings.Add(new SettingsInfo
@@ -107,7 +109,7 @@ public partial class SettingsPage : ContentPage
             Username = TextInput.Text
         });
 
-        var tempFile = "/INSERT/FILE/PATH/HERE";
+        var tempFile = "/FILE/PATH/HERE/settings_temp.csv";
 
         using (var stream = new FileStream(tempFile, FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.ReadWrite))
         using (var writer = new StreamWriter(stream))

@@ -13,10 +13,12 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
+        <!--Header image-->
         <Image Source="btx.png"
                Aspect="AspectFill"
                Grid.Row="0"/>
 
+        <!--Header title-->
         <Label
             x:Name="HeaderText"
             Text="Adjust user settings"
@@ -32,6 +34,7 @@
             Padding="20"
             Spacing="30">
 
+            <!--Light/Dark mode switch-->
             <Border
                 Padding="30,20"
                 StrokeThickness="2">
@@ -52,6 +55,7 @@
                 </HorizontalStackLayout>
             </Border>
 
+            <!--Text size buttons-->
             <Border
                 Padding="10,20"
                 StrokeThickness="2">
@@ -89,6 +93,7 @@
                 </HorizontalStackLayout>
             </Border>
 
+            <!--User input text box, populated with current username-->
             <Border
                 Padding="20"
                 StrokeThickness="2">
@@ -118,6 +123,7 @@
 
             <VerticalStackLayout
                 Padding="20">
+                <!--Save button-->
                 <ImageButton
                     Source="save.png"
                     WidthRequest="70"

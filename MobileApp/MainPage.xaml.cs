@@ -20,8 +20,10 @@ public partial class MainPage : ContentPage
         GetEmployees();
     }
 
+    // ListView item selected
     private async void OnEmployeeSelected(object sender, ItemTappedEventArgs e)
 	{
+        // Send selected employee info to EmployeeDetails page
         var employeeSelected = e.Item as EmployeeInfo;
 
         var firstName = employeeSelected.FirstName;
@@ -51,13 +53,14 @@ public partial class MainPage : ContentPage
             HasHeaderRecord = false
         };
 
-        var localFile = "/INSERT/FILE/PATH/HERE";
+        var localFile = "/FILE/PATH/HERE/employee_local.csv";
 
+        // If local copy of employees.csv exists, read it, otherwise get remote file from http server and make a copy for local use
         if (!File.Exists(localFile))
         {
             HttpClient server = new HttpClient();
             server.BaseAddress = new Uri("http://localhost/");
-            HttpResponseMessage response = await server.GetAsync("INSERTFILENAMEHERE.csv");
+            HttpResponseMessage response = await server.GetAsync("employee_server.csv");
 
             var serverFile = await response.Content.ReadAsStreamAsync();
 

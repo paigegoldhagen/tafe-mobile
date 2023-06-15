@@ -13,16 +13,19 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
+        <!--Header background-->
         <Image Source="btx.png"
                Aspect="AspectFill"
                Grid.Row="0"/>
 
+        <!--Header current photo-->
         <Image
             x:Name="PictureUpdate"
             WidthRequest="120"
             Grid.Row="0"
             />
 
+        <!--Scrolling view of user inputs that can be updated (first/last name, department, phone, address)-->
         <ScrollView
             Grid.Row="1">
             <VerticalStackLayout
@@ -130,7 +133,7 @@
 
                     <VerticalStackLayout
                         Spacing="10">
-
+                        <!--Save button-->
                         <ImageButton
                             x:Name="SaveButton"
                             Source="save.png"
